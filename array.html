@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // There are 3 ways to construct array in JavaScript
+
+// By array literal
+// By creating instance of Array directly (using new keyword)
+// By using an Array constructor (using new keyword)
+
+let car = ['Tata', 'BMW', 'Toyota','Tesla']; //array literal
+console.log("Brands of car are:"+car);
+ 
+let someEvenNumbers = new Array();// creating instance of array directly
+someEvenNumbers[0] = 2;
+someEvenNumbers[1] = 4;
+someEvenNumbers[2] = 6;
+for(let i = 0; i < someEvenNumbers.length; i++){
+    console.log(someEvenNumbers[i]);
+}
+
+let fruits = new Array('Banana', 'Apple', 'Peach','Mango');//using array constructor
+for(let x in fruits){
+    console.log(fruits[x]);
+}
+//array methods
+let num = [10,20,3,4,5];
+//toString() converts neumeric array into a string array
+console.log(num.toString());
+
+// join() joins all array elements using separator
+let sample = num.join("_"); // now separator is underscore(_)
+console.log(sample);
+let sample1 = num.join("and");
+console.log(sample1);
+
+//pop() pop out array element from the end 
+console.log("Poped element is: " + someEvenNumbers.pop());
+//shift() remove the element from start of the array
+let r = someEvenNumbers.shift();
+console.log(someEvenNumbers, r);
+
+//push() adds new element at the end of array
+console.log(someEvenNumbers.push(22));
+//unshift() adds new element at the beginning of the array
+console.log(someEvenNumbers.unshift(20));
+
+// delete operator deletes array element and deletes does not affect length of array
+let n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Original n array :" + n);
+// delete n[1];//2 will be deleted 
+// console.log("After deleteing index 1 element:" + n);
+//concat() concatinate arrays and return new array and it can concatinate any no. of arrays
+let n1 = [11, 12, 13, 14, 15, ];
+console.log("Original n1 array:" + n1);
+let new_array = n.concat(n1);
+console.log("Concatinated (n, n1) array is :" + new_array);
+//sort() it sorts element alphabetically --ream more about it
+let n2 = [ 5, 1, 10, 3, 2 , 4];
+console.log("Unsorted array: " + n2);
+n2.sort();
+console.log("Sorted array: " + n2);
+//reverse() reverse the array
+console.log("Reversed array: " + n2.reverse());
+//splice and slice --very important concept
+//splice() is used to add new array items syntax arry.splice(start, delete items, new items)
+ fruits.splice(2,1,'Lemon','Grapes');
+console.log("After splice: " + fruits);
+let deletedValue =  fruits.splice(2,1,'Lemon','Grapes');// it returns deleted value 
+
+//slice() it returns selected items from the array and returns new array..+ it does not modify original array
+let favFruits = fruits.slice(1,3);
+console.log("Fruits that i like the most : " + favFruits);
+
+    </script>
+
+</body>
+</html>
